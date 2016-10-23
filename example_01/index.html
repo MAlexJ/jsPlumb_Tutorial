@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="">
+
+<head>
+    <!--Style-->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <!--Script-->
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.jsPlumb-1.4.1-all-min.js"></script>
+</head>
+
+<body>
+
+<div id="diagramContainer">
+    <div id="item_left" class="item"></div>
+    <div id="item_right" class="item" style="left:150px;"></div>
+</div>
+
+
+<script>
+    jsPlumb.ready(function () {
+        jsPlumb.connect({
+            source: "item_left",
+            target: "item_right",
+            endpoint: "Rectangle"
+        });
+    });
+
+    jsPlumb.draggable("item_left");
+    jsPlumb.draggable("item_right");
+</script>
+
+</body>
+</html>
